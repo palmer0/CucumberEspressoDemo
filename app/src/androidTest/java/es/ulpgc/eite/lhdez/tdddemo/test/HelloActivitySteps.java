@@ -25,6 +25,7 @@ import static org.hamcrest.Matchers.not;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+@SuppressWarnings("ALL")
 public class HelloActivitySteps {
 
   @Rule
