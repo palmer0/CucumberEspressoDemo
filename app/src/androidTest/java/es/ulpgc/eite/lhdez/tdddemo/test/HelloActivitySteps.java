@@ -35,7 +35,7 @@ public class HelloActivitySteps {
   private Activity activity;
 
   @Before("@hello-feature")
-  public void setupUp() {
+  public void setUp() {
     activityTestRule.launchActivity(new Intent());
     activity = activityTestRule.getActivity();
   }
