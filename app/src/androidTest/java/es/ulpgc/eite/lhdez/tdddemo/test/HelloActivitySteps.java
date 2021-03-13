@@ -2,10 +2,8 @@ package es.ulpgc.eite.lhdez.tdddemo.test;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.RemoteException;
 
 import androidx.test.rule.ActivityTestRule;
-import androidx.test.uiautomator.UiDevice;
 
 import org.junit.Rule;
 
@@ -23,7 +21,6 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
-import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.hamcrest.Matchers.not;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -39,13 +36,6 @@ public class HelloActivitySteps {
 
   @Before("@hello-feature")
   public void setUp() {
-    try {
-
-      UiDevice device = UiDevice.getInstance(getInstrumentation());
-      device.setOrientationNatural();
-
-    } catch (RemoteException e) {
-    }
 
     activityTestRule.launchActivity(new Intent());
     activity = activityTestRule.getActivity();
@@ -53,13 +43,6 @@ public class HelloActivitySteps {
 
   @After("@hello-feature")
   public void tearDown() {
-    try {
-
-      UiDevice device = UiDevice.getInstance(getInstrumentation());
-      device.setOrientationNatural();
-
-    } catch (RemoteException e) {
-    }
 
     activityTestRule.finishActivity();
   }
